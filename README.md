@@ -8,14 +8,16 @@ To analyze the relationship between input and received signal of a 660nm fiber o
 ---
 
 ## EQUIPMENTS REQUIRED
--	Link-B Kit with power supply.
--	Patch chords.
--	20MHz Dual Channel Oscilloscope.
--	1 MHz Function Generator.
--	1 Meter Fiber Cable.
+- Fiber optic trainer kit ST 2502  
+- Power supply  
+- Patch cords  
+- CRO (Cathode Ray Oscilloscope)  
+- 660 nm fiber cable  
+
 ---
 
 ## THEORY
+
 Fiber optic links can be used for transmission of digital as well as analog signals. Basically a fiber optic link contains three main elements, a transmitter, an optical fiber and a receiver. The transmitter module takes the input signal in electrical form and then transforms it into optical (light) energy containing the same information. The optical fiber is the medium which takes the energy to the receiver. At the receiver light is converted back into electrical form with the same pattern as originally fed to the transmitter.
 
 TRANSMITTER:
@@ -25,8 +27,6 @@ RECEIVER:
 The function of the receiver is to convert the optical energy into electrical form, which is then conditioned to reproduce the transmitted electrical signal in it's original form. The detector SFH350V (Photo Transistor Detector) used in the kit has a transistor type output. The parameters usually considered in the case of detector are it's responsivity at peak wavelength and response time. SFH350V (Photo Transistor Detector) has responsivity of about 0.8mA/10uW at 660nm. But its response time is quite large and thus has lower bandwidth of about 300 KHz. When optical signal falls on the base of the transistor detector, proportional
  
 current flows through its emitter generating the voltage across the resistance connected between emitter and ground. This voltage is the duplication of the transmitted electrical signal, which can be amplified.
-
-
 
 ---
 
@@ -42,17 +42,14 @@ current flows through its emitter generating the voltage across the resistance c
 -	Keep Jumper JP8 towards sine position.
 -	Keep Intensity control pot P2 towards minimum position.
 -	Feed about 2Vpp sinusoidal signal of 1 KHz from the function generator to the IN post of Analog Buffer.
-
-<img width="685" height="292" alt="image" src="https://github.com/user-attachments/assets/deeb13f1-8e37-4986-822b-559132f14281" />
+<img width="685" height="292" alt="image" src="https://github.com/user-attachments/assets/89b3c1c2-b103-4cb4-ba1c-1a260dc8371c" />
 
  
 -	Connect the output post OUT of Analog Buffer to the post TX IN of Transmitter.
 -	Slightly unscrew the cap of SFH756V (660nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
 -	Connect the other end of the Fiber to detector SFH350V (Photo Transistor Detector) very carefully.
 -	Observe the detected signal at post ANALOG OUT on oscilloscope. Adjust Intensity control pot P2 Optical Power control potentiometer so that you receive signal of 2Vpp amplitude.
-
-<img width="743" height="301" alt="image" src="https://github.com/user-attachments/assets/1ee120f9-92c5-4e97-ac32-f6520bf30d78" />
-
+<img width="743" height="301" alt="image" src="https://github.com/user-attachments/assets/71e665f5-5966-4c1d-a0bf-c428b657a58f" />
 
 -	To measure the analog bandwidths of the phototransistor vary the input signal frequency and observe the detected signal at various frequencies.
 -	Plot the detected signal against applied signal frequency and from the plot determine the 3dB down frequency.
@@ -60,33 +57,50 @@ current flows through its emitter generating the voltage across the resistance c
 -	Keep Jumper JP7 towards +12V position.
 -	Remove fiber cable from SFH756V (660nm) and slightly unscrew the cap of SFH450V (950nm). Do not remove the cap from the connector. Once the cap is loosened, insert the one meter fiber into the cap. Now tighten the cap by screwing it back.
 -	Observe the detected signal at post ANALOG OUT on oscilloscope.
-
-<img width="721" height="292" alt="image" src="https://github.com/user-attachments/assets/599d4fcc-b1e2-45fb-a98d-5f833cade038" />
-
-
----
-
-## BLOCK DIAGR
+<img width="721" height="292" alt="image" src="https://github.com/user-attachments/assets/bfa05768-75f7-4118-b2b0-44e9936eaebc" />
 
 
 ---
 
+## BLOCK DIAGRAM
+
+<img width="1189" height="704" alt="Screenshot 2025-11-11 190114" src="https://github.com/user-attachments/assets/08881b61-42f8-4e62-95b9-13ff3e4be597" />
+
+---
 
 ## TABULATION  
 **Transmission through Analog Link**
 
 | Frequency (Hz) | Output Signal Amplitude (Vo) | Gain = Vo/Vi | Gain in dB |
 |----------------|------------------------------|--------------|------------|
-|                |                              |              |            |
+|      800       |           120 mV             |    0.024     |  -32.395   |
+|      1.5k      |           216 mV             |    0.0432    |  -27.290   |
+|      3k        |           412 mV             |    0.134     |  -21.681   |
+|      5k        |           670 mV             |    0.1848    |  -17.457   |
+|      7k        |           924 mV             |    0.19      |  -14.665   |
+|      9k        |           950 mV             |    0.19      |  -14.424   |
+|      11k       |           950 mV             |    0.19      |  -14.424   |
+|      13k       |           950 mV             |    0.19      |  -14.424   |
+|      15k       |           950 mV             |    0.19      |  -14.424   |
+|      50k       |           840 mV             |    0.168     |  -15.493   |
+|      200k      |           385 mV             |    0.077     |  -22.270   |
+|      600k      |           280 mV             |    0.056     |  -25.036   |
+|      800k      |           95 mV              |    0.19      |  -34.424   |
+|      1M        |           58 mV              |    0.011     |  -39.172   |
 
 ---
 
 ## MODEL GRAPH
 
-*(Insert model graph here)*
+<img width="880" height="538" alt="Screenshot 2025-11-11 190804" src="https://github.com/user-attachments/assets/25ece563-cf37-448d-8b86-19078ca43f90" />
+---
+## GRAPH
 
+![Exp4](https://github.com/user-attachments/assets/6dc91815-2912-4408-9313-ced80fc132d3)
 ---
 
 ## RESULT
+Thus, the frequency response of analog fiber optic link was studied and the determined bandwidth is 95 kHz.
 
-*(Summarize observations and conclusions here)*
+
+
